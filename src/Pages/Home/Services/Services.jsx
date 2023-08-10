@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ServiecCard from "./ServiecCard";
 
 const Services = () => {
     const [services, setServices] = useState([])
@@ -16,8 +17,13 @@ const Services = () => {
                 <h2 className="text-5xl font-bold">Our Service Area</h2>
                 <p>the majority have suffered alteration in some form, by injected humour, or randomised <br/> words which dont look even slightly believable. </p>
             </div>
-            <div>
-                <p>Services {services.length}</p>
+            <div className="grid lg:grid-cols-3 grid-cols-1">
+                {
+                    services.map(service => <ServiecCard
+                    key={service._id}
+                    service = {service}
+                    ></ServiecCard>)
+                }
             </div>
             
         </div>
