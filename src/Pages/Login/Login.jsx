@@ -19,7 +19,7 @@ const Login = () => {
           console.log(loggedUser)
           form.reset()
         })
-        .catch((error) => {
+        .catch((error) => { 
           console.log(error)
         })
     }
