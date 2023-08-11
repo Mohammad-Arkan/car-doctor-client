@@ -17,6 +17,12 @@ const NavBar = () => {
     <li><Link to="/about">About</Link></li>
     <li><Link to="/service">Service</Link></li>
     <li><Link to="/blog">Blog</Link></li>
+    {
+      user?<li><Link onClick={handleLogOut} >Logout</Link></li>
+      :<li><Link to="/login">Login</Link></li>
+    }
+    
+    
     <li><Link to="/contact">Contact</Link></li>
     </>
     return (
@@ -43,11 +49,7 @@ const NavBar = () => {
         </div>
         <div className="navbar-end">
           <button className="btn btn-outline btn-warning" >Appointment</button>
-          {
-            user ? <>  <button onClick={handleLogOut} className="btn btn-neutral">Sign Out</button> </>
-          : <> <Link to="/login" className="btn btn-neutral">Sign In</Link>
-            <button ></button> </>
-          } 
+         
         </div>
       </div>
     );

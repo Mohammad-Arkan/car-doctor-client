@@ -19,7 +19,7 @@ const AddCar = () => {
         console.log(newCar)
 
         //send data to the server
-        fetch('http://localhost:5000/products',{
+        fetch('http://localhost:5000/services',{
             method:"POST",
             headers:{
                 "content-type":"application/json"
