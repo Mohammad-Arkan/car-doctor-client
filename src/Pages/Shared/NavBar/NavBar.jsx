@@ -19,7 +19,7 @@ const NavBar = () => {
   
     { user?.email? 
     <>
-    <li><Link to="/booking">My Booking</Link></li>
+    <li><Link to="/bookings">My Booking</Link></li>
     <button onClick={handleLogOut}>Logout</button>
     </>
     :<li><Link to="/login">Login</Link></li>

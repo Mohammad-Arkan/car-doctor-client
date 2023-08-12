@@ -2,14 +2,14 @@ import  { useContext, useEffect, useState } from 'react';
 import { AuthContex } from '../../Providers/AuthProviders';
 import BookingRow from './BookingRow';
 
-const Booking = () => {
+const Bookings = () => {
     const {user} = useContext(AuthContex);
     const [bookings, setBookings] = useState([])
 
-    // const url = `http://localhost:5000/bookings/?email=${user.email}`;
+    const url = `http://localhost:5000/bookings/?email=${user.email}`;
 
     useEffect(()=> {
-        fetch(`http://localhost:5000/bookings?email=${user?.email}`)
+        fetch(url)
         .then(res => res.json())
         .then(data => {
             setBookings(data)
@@ -30,9 +30,10 @@ const Booking = () => {
         </th>
         <th>Name</th>
         <th>Job</th>
-        <th>Email</th>
+        <th>Date</th>
         <th>Price</th>
         <th>Service ID</th>
+        <th>Status</th>
       </tr>
     </thead>
     <tbody>
@@ -53,4 +54,4 @@ const Booking = () => {
     );
 };
 
-export default Booking;
+export default Bookings;
